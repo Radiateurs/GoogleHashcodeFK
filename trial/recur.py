@@ -15,9 +15,9 @@ def rec(mat, L, h):
     lcm = 0
     h = 0
     mask = np.zeros(mat.shape)
-    b = [0, 0]
-    e = [0, 0]
-    add(mat, e, [1, 0], h, lcm, lct)
+    b = np.array([0, 0])
+    e = np.array([0, 0])
+    e, lcm, lct = add(mat, e, np.array([1, 0]), h, lcm, lct)
 
 
 def add(mat, e, a, h, lcm, lct):
@@ -30,15 +30,13 @@ def add(mat, e, a, h, lcm, lct):
                 lct += 1
             else:
                 lcm += 1
+        if e[0] + 1 <= mat.shape[0]
+            e, lcm, lct = add(mat, e, np.array([0, 1]), h, lcm, lct)
+            if e and lcm > h and lct > h:
+                return e, lcm, lct
 
-        e, lcm, lct = add(mat, e, [0, 1], h, lcm, lct)
+        e, lcm, lct = add(mat, e, np.array([0, 1]), h, lcm, lct)
         if e and lcm > h and lct > h:
             return e, lcm, lct
-        else return False, lcm, lct
 
-        e, lcm, lct = add(mat, e, [0, 1], h, lcm, lct)
-        if e and lcm > h and lct > h:
-            return e, lcm, lct
-        else return False, lcm, lct
-
-    else return False, lcm, lct
+        return False, lcm, lct
