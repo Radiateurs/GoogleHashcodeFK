@@ -7,7 +7,7 @@ def nearest_ride(vehicle, rides):
     for i, vehicle in enumerate(vehicles):
         distance[i] = (max(vehicle[0], ride[0]) - min(vehicle[0], ride[0])) + (max(vehicle[1], ride[1]) - min(vehicle[1], ride[1]))
     for i, dist in enumerate(distance):
-        if (smallest is None or smallest > dist)
+        if (smallest is None or smallest > dist):
             smallest = dist
             id = i
     return id
