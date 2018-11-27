@@ -63,7 +63,7 @@ def jerem_fun(mat, rows, columns, vehicles, rides, bonus, steps):
 		                distrout = dist(brid, erid)
 		                num = mat[irid, 3, 0]
 		                if distbe + timv == beg:
-		                	vrid[v][1].append([brid, [distbe + timv, distbe + timv+ distrout],num])
+		                	vrid[v][1].append([brid, [distbe + timv, distbe + timv + distrout],num])
 		                	vrid[v][0] = erid
 						    mat = np.delete(mat, i)
 						    ok = True
